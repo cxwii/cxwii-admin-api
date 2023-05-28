@@ -1,20 +1,48 @@
 const express = require('express')
-const app = express()
-
-// 解决跨域
 const cors = require('cors')
+const app = express()
+const joi = require('joi')
+const { expressjwt: jwt } = require("express-jwt")
+const config = require('./config')
+
 app.use(cors())
-
-// 解决boyd内容为空
-const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ express: false }))
-app.use(bodyParser.json())
-
+app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-const loginRouter = require('./router/login')
-app.use('/api', loginRouter)
+// 错误处理函数
+app.use((req, res, next) => {
+  res.cc = function (err, status = 500) {
+    res.send({
+      status,
+      message: err instanceof Error ? err.message : err
+    })
+  }
+  next()
+})
+
+app.use(jwt({ secret: config.jwtSecretKey, algorithms: ["HS256"] }).unless({ path: [ /^\/api/, "/regUser", "/login" ] }))
+
+// 注册各种路由
+const userRouter = require('./router/user')
+const userInfoRouter = require('./router/userInfo')
+const userRouterRouter = require('./router/userRouter')
+app.use(userRouter)
+app.use(userInfoRouter)
+app.use(userRouterRouter)
+// 带api的不用token,正式环境中删掉
+app.use('/api', userRouter)
+app.use('/api', userInfoRouter)
+app.use('/api', userRouterRouter)
+
+app.use((err, req, res, next) => {
+  if (err instanceof joi.ValidationError) return res.cc(err)
+  if (err.status === 401) return res.cc('token过期', 401)
+  if (err.name ===  'UnauthorizedError') return res.cc('token验证失败')
+  res.cc(err)
+})
 
 app.listen(9528, () => {
-  console.log('juejimcsApi server running at http://127.0.0.1:9528 :>>')
+  console.log('cxwii_Admin server running at http://127.0.0.1:9528')
 })
+
+export {}
