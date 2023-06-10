@@ -1,7 +1,7 @@
 const joi = require('joi')
 
 const userId = joi.number().integer().min(1).required()
-const username = joi.string().alphanum().min(1).max(10).required()
+const username = joi.string().min(1).max(10).required()
 const password = joi.string().pattern(/^[\S]{6,12}$/).required()
 const email = joi.string().email().required()
 const avatar = joi.string().dataUri().required()
