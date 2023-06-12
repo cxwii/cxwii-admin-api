@@ -19,7 +19,24 @@ exports.getUserInfo = (req, res) => {
   )
 }
 
-// 更改用户信息
+// 获取用户信息列表
+exports.getUserInfoList = (req, res) => {
+  if (req.auth.roleId != '1') return res.cc('获取用户信息列表权限不足')
+  myDB.query(
+    'select userId, username, email, userPic from user',
+    (err, results) => {
+      if(err) return res.cc(err)
+
+      res.send({
+        status: 200,
+        message: '获取用户信息列表成功',
+        data: results
+      })
+    }
+  )
+}
+
+// 更改用户信息(更改自己的)
 exports.updateUserInfo = (req, res) => {
   myDB.query(
     'update user set ? where userId=?',
@@ -29,6 +46,37 @@ exports.updateUserInfo = (req, res) => {
       if(results.affectedRows !== 1) return res.cc('更新用户信息失败')
 
       res.cc('更新用户信息成功', 200)
+    }
+  )
+}
+
+// 更改用户信息(更改列表里所有的)
+exports.updateUserInfoList = (req, res) => {
+  console.log('req :>> ', req);
+  if (req.auth.roleId != '1') return res.cc('获取用户信息列表权限不足')
+  myDB.query(
+    'update user set ? where userId=?',
+    [req.body, req.body.userId],
+    (err, results) => {
+      if(err) return res.cc(err)
+      if(results.affectedRows !== 1) return res.cc('更新用户信息失败')
+
+      res.cc('更新用户信息成功', 200)
+    }
+  )
+}
+
+// 删除用户信息
+exports.deleteUserInfo = (req, res) => {
+  if (req.auth.roleId != '1') return res.cc('删除用户信息权限不足')
+  myDB.query(
+    'delete from user where userId=?',
+    req.body.userId,
+    (err, results) => {
+      if(err) return res.cc(err)
+      if(results.affectedRows !== 1) return res.cc('删除用户信息失败')
+
+      res.cc('删除用户信息成功', 200)
     }
   )
 }
