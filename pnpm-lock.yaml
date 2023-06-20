@@ -11,6 +11,7 @@ specifiers:
   joi: ^17.4.0
   jsonwebtoken: ^9.0.0
   mysql: ^2.18.1
+  ws: ^8.13.0
 
 dependencies:
   '@escook/express-joi': registry.npmmirror.com/@escook/express-joi/1.1.1
@@ -21,6 +22,7 @@ dependencies:
   joi: registry.npmmirror.com/joi/17.9.2
   jsonwebtoken: registry.npmmirror.com/jsonwebtoken/9.0.0
   mysql: registry.npmmirror.com/mysql/2.18.1
+  ws: registry.npmmirror.com/ws/8.13.0
 
 devDependencies:
   '@types/express': registry.npmmirror.com/@types/express/4.17.17
@@ -859,6 +861,21 @@ packages:
     name: vary
     version: 1.1.2
     engines: {node: '>= 0.8'}
+    dev: false
+
+  registry.npmmirror.com/ws/8.13.0:
+    resolution: {integrity: sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ws/-/ws-8.13.0.tgz}
+    name: ws
+    version: 8.13.0
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
     dev: false
 
   registry.npmmirror.com/yallist/4.0.0:
