@@ -7,7 +7,7 @@ exports.getStaticChartOption= (req, res) => {
     req.body.chartName,
     (err, results) => {
       if(err) return res.cc(err)
-      if(results.length < 0) return res.cc('获取静态图表信息失败')
+      if(results.length <= 0) return res.cc('获取静态图表信息失败')
       
       const data = results.map((item) => ({
         chartName: item.chartName,

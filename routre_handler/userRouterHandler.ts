@@ -7,7 +7,7 @@ exports.getUserRouter= (req, res) => {
     req.auth.roleId,
     (err, results) => {
       if(err) return res.cc(err)
-      if(results.length < 0) return res.cc('获取路由信息失败')
+      if(results.length <= 0) return res.cc('获取路由信息失败')
       
       const data = results.map((item) => ({
         children: JSON.parse(item.children),
