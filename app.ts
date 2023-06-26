@@ -6,6 +6,7 @@ const { expressjwt: jwt } = require("express-jwt")
 const config = require('./config')
 const http = require("http")
 const WS_MODULE = require("ws")
+const myDB = require('./db/mysql')
 
 app.use(cors())
 // base64过长的问题解决limit:'600mb'
@@ -15,10 +16,27 @@ app.use(express.urlencoded({ extended: false, limit:'600mb' }))
 // 错误处理函数
 app.use((req, res, next) => {
   res.cc = function (err, status = 500) {
-    res.send({
-      status,
-      message: err instanceof Error ? err.message : err
-    })
+    // 存储错误信息
+    if (status == 500) {
+      let time = new Date( )
+      myDB.query(
+        'insert into errorinfo set ?',
+        {
+          errorTime: time,
+          errorInfo: err
+        },
+        (err, results) => {}
+      )
+      res.send({
+        status,
+        message: err instanceof Error ? err.message : err
+      })
+    } else {
+      res.send({
+        status,
+        message: err instanceof Error ? err.message : err
+      })
+    }
   }
   next()
 })
@@ -52,6 +70,7 @@ app.use((err, req, res, next) => {
 
 const server = http.createServer(app)
 
+import { time } from 'console'
 // webSocket中查询数据库的方法
 import { getDynamicChartOption } from './webSocket_handler/chartHandler'
 

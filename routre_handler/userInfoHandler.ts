@@ -52,7 +52,6 @@ exports.updateUserInfo = (req, res) => {
 
 // 更改用户信息(更改列表里所有的)
 exports.updateUserInfoList = (req, res) => {
-  console.log('req :>> ', req);
   if (req.auth.roleId != '1') return res.cc('获取用户信息列表权限不足')
   myDB.query(
     'update user set ? where userId=?',
