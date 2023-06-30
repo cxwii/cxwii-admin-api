@@ -11,7 +11,7 @@
  Target Server Version : 80020 (8.0.20)
  File Encoding         : 65001
 
- Date: 26/06/2023 13:52:40
+ Date: 30/06/2023 10:58:07
 */
 
 SET NAMES utf8mb4;
@@ -50,6 +50,7 @@ INSERT INTO `errorinfo` VALUES ('2023-06-26 13:46:32', '用户名被占用');
 INSERT INTO `errorinfo` VALUES ('2023-06-26 13:46:47', 'ValidationError: \"username\" length must be less than or equal to 10 characters long');
 INSERT INTO `errorinfo` VALUES ('2023-06-26 13:47:00', 'ValidationError: \"username\" length must be less than or equal to 10 characters long');
 INSERT INTO `errorinfo` VALUES ('2023-06-26 13:49:03', 'ValidationError: \"email\" must be a string');
+INSERT INTO `errorinfo` VALUES ('2023-06-29 17:54:58', 'ValidationError: \"username\" is not allowed to be empty');
 
 -- ----------------------------
 -- Table structure for rich_text
@@ -83,11 +84,11 @@ CREATE TABLE `router`  (
 -- ----------------------------
 -- Records of router
 -- ----------------------------
-INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"affix\": true, \"title\": \"首页\", \"isSubMenu\": false}, \"name\": \"homePage\", \"path\": \"homePage\", \"component\": \"views/HomePage/homePage\"}]', '#', '{\"icon\": \"el-icon-shouye1\", \"title\": \"首页\", \"menuPath\": \"/home/homePage\", \"isSubMenu\": false}', 'home', '/home', '/home/homePage');
-INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"title\": \"动态图表\", \"noCache\": true, \"menuPath\": \"/chart/dynamicChart\", \"isSubMenu\": false}, \"name\": \"dynamicChart\", \"path\": \"dynamicChart\", \"component\": \"views/Chart/dynamicChart/dynamicChart\"}, {\"meta\": {\"title\": \"静态图表\", \"menuPath\": \"/chart/staticChart\", \"isSubMenu\": false}, \"name\": \"staticChart\", \"path\": \"staticChart\", \"component\": \"views/Chart/staticChart/staticChart\"}]', '#', '{\"icon\": \"el-icon-yuanshuju-zujianku\", \"title\": \"图表\", \"isSubMenu\": true}', 'chart', '/chart', '/chart/dynamicChart');
-INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"title\": \"表格\", \"menuPath\": \"/elComponents/table\", \"isSubMenu\": false}, \"name\": \"table\", \"path\": \"table\", \"component\": \"views/ElComponents/table/table\"}]', '#', '{\"icon\": \"el-icon-tubiao-zhexiantu\", \"title\": \"elui组件\", \"isSubMenu\": true}', 'elComponents', '/elComponents', '/elComponents/table');
-INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"title\": \"富文本\", \"isSubMenu\": false}, \"name\": \"text\", \"path\": \"text\", \"component\": \"views/RichText/text\"}]', '#', '{\"icon\": \"el-icon-fuwenben\", \"title\": \"文本\", \"menuPath\": \"/richText/text\", \"isSubMenu\": false}', 'richText', '/richText', '/richText/text');
-INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"title\": \"用户列表\", \"isSubMenu\": false}, \"name\": \"userInfoList\", \"path\": \"userInfoList\", \"component\": \"views/User/userManage\"}]', '#', '{\"icon\": \"el-icon-list\", \"title\": \"用户\", \"menuPath\": \"/user/userInfoList\", \"isSubMenu\": false}', 'user', '/user', '/user/userInfoList');
+INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"affix\": true, \"title\": \"首页\"}, \"name\": \"homePage\", \"path\": \"homePage\", \"component\": \"views/HomePage/homePage\"}]', '#', '{\"icon\": \"el-icon-shouye1\", \"title\": \"首页\"}', 'home', '/home', '/home/homePage');
+INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"title\": \"动态图表\", \"noCache\": true}, \"name\": \"dynamicChart\", \"path\": \"dynamicChart\", \"component\": \"views/Chart/dynamicChart/dynamicChart\"}, {\"meta\": {\"title\": \"静态图表\", \"menuPath\": \"/chart/staticChart\"}, \"name\": \"staticChart\", \"path\": \"staticChart\", \"component\": \"views/Chart/staticChart/staticChart\"}]', '#', '{\"icon\": \"el-icon-yuanshuju-zujianku\", \"title\": \"图表\"}', 'chart', '/chart', '/chart/dynamicChart');
+INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"title\": \"表格\"}, \"name\": \"table\", \"path\": \"table\", \"component\": \"views/ElComponents/table/table\"}]', '#', '{\"icon\": \"el-icon-tubiao-zhexiantu\", \"title\": \"elui组件\"}', 'elComponents', '/elComponents', '/elComponents/table');
+INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"title\": \"富文本\"}, \"name\": \"text\", \"path\": \"text\", \"component\": \"views/RichText/text\"}]', '#', '{\"icon\": \"el-icon-fuwenben\", \"title\": \"文本\"}', 'richText', '/richText', '/richText/text');
+INSERT INTO `router` VALUES ('1', '[{\"meta\": {\"title\": \"用户列表\"}, \"name\": \"userInfoList\", \"path\": \"userInfoList\", \"component\": \"views/User/userManage\"}]', '#', '{\"icon\": \"el-icon-list\", \"title\": \"用户\"}', 'user', '/user', '/user/userInfoList');
 
 -- ----------------------------
 -- Table structure for static_chart
