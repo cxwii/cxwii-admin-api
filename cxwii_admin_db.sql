@@ -11,7 +11,7 @@
  Target Server Version : 80020 (8.0.20)
  File Encoding         : 65001
 
- Date: 11/09/2023 21:55:42
+ Date: 15/09/2023 17:25:34
 */
 
 SET NAMES utf8mb4;
@@ -80,7 +80,7 @@ CREATE TABLE `router_code`  (
 -- ----------------------------
 -- Records of router_code
 -- ----------------------------
-INSERT INTO `router_code` VALUES (15, '[{\"code\": \"001\", \"children\": [{\"code\": \"001001\"}]}, {\"code\": \"002\", \"children\": [{\"code\": \"002001\"}, {\"code\": \"002002\"}, {\"code\": \"002003\"}]}, {\"code\": \"003\", \"children\": [{\"code\": \"003001\"}, {\"code\": \"003002\"}]}, {\"code\": \"004\", \"children\": [{\"code\": \"004001\"}, {\"code\": \"004002\"}]}, {\"code\": \"005\", \"children\": [{\"code\": \"005001\"}, {\"code\": \"005002\"}, {\"code\": \"005003\", \"children\": [{\"code\": \"005003001\"}, {\"code\": \"005003002\"}, {\"code\": \"005003003\"}]}]}]');
+INSERT INTO `router_code` VALUES (15, '[{\"code\": \"001\", \"children\": [{\"code\": \"001001\"}]}, {\"code\": \"002\", \"children\": [{\"code\": \"002001\"}, {\"code\": \"002002\"}, {\"code\": \"002003\"}]}, {\"code\": \"003\", \"children\": [{\"code\": \"003001\"}, {\"code\": \"003002\"}]}, {\"code\": \"004\", \"children\": [{\"code\": \"004001\"}, {\"code\": \"004002\"}]}, {\"code\": \"005\", \"children\": [{\"code\": \"005001\"}, {\"code\": \"005002\"}, {\"code\": \"005003\"}]}]');
 
 -- ----------------------------
 -- Table structure for router_rd
