@@ -11,7 +11,7 @@
  Target Server Version : 80020 (8.0.20)
  File Encoding         : 65001
 
- Date: 15/09/2023 17:25:34
+ Date: 18/01/2024 16:37:22
 */
 
 SET NAMES utf8mb4;
@@ -51,6 +51,83 @@ INSERT INTO `errorinfo` VALUES ('2023-06-26 13:46:47', 'ValidationError: \"usern
 INSERT INTO `errorinfo` VALUES ('2023-06-26 13:47:00', 'ValidationError: \"username\" length must be less than or equal to 10 characters long');
 INSERT INTO `errorinfo` VALUES ('2023-06-26 13:49:03', 'ValidationError: \"email\" must be a string');
 INSERT INTO `errorinfo` VALUES ('2023-06-29 17:54:58', 'ValidationError: \"username\" is not allowed to be empty');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 12:39:08', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 12:46:35', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 12:47:37', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 12:47:51', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 13:04:13', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 13:53:04', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 13:53:47', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 16:20:17', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 16:20:31', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-11-04 16:29:28', 'ValidationError: \"username\" is required');
+INSERT INTO `errorinfo` VALUES ('2023-12-25 18:48:45', 'Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect string value: \'\\xF0\\x9F\\x98\\xAC</...\' for column \'EditorText\' at row 1');
+INSERT INTO `errorinfo` VALUES ('2023-12-25 18:48:59', 'Error: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect string value: \'\\xF0\\x9F\\x98\\xAC</...\' for column \'EditorText\' at row 1');
+
+-- ----------------------------
+-- Table structure for phrase
+-- ----------------------------
+DROP TABLE IF EXISTS `phrase`;
+CREATE TABLE `phrase`  (
+  `phid` int NOT NULL AUTO_INCREMENT,
+  `phrase` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `author` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`phid`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of phrase
+-- ----------------------------
+INSERT INTO `phrase` VALUES (1, ' 一个人知道自己为什么而活，就可以忍受任何一种生活。', '尼采');
+INSERT INTO `phrase` VALUES (2, '优于别人，并不高贵，真正的高贵应该是优于过去的自己。', '海明威');
+INSERT INTO `phrase` VALUES (3, '没有人值得你流泪，值得让你这么做的人不会让你哭泣。 ', '莎士比亚');
+INSERT INTO `phrase` VALUES (4, '黑夜无论怎样悠长，白昼总会到来。', '莎士比亚');
+INSERT INTO `phrase` VALUES (5, '你要搞清楚自己人生的剧本——不是你父母的续集，不是你子女的前传，更不是你朋友的外篇。', '尼采');
+INSERT INTO `phrase` VALUES (6, '谁终将声震人间，必长久深自缄默；谁终将点燃闪电，必长久如云漂泊。', '尼采');
+INSERT INTO `phrase` VALUES (7, '每个人都会有缺陷，就像被上帝咬过的苹果，有的人缺陷比较大，正是因为上帝特别喜欢他的芬芳。', '托尔斯泰');
+INSERT INTO `phrase` VALUES (8, '如果爱一个人，那就爱整个的他，实事求是地照他本来的面目去爱他，而不是脱离实际希望他这样那样的⋯⋯', '托尔斯泰');
+INSERT INTO `phrase` VALUES (9, '生如夏花之绚烂，死如秋叶之静美。', '泰戈尔');
+INSERT INTO `phrase` VALUES (10, '纵然伤心，也不要愁眉不展，因为你不知是谁会爱上你的笑容。', '泰戈尔');
+INSERT INTO `phrase` VALUES (11, '当真理还正在穿鞋的时候，谎言就能走遍半个世界。', '马克吐温');
+INSERT INTO `phrase` VALUES (12, '有皱纹的地方只表示微笑曾在那儿呆过。', '马克吐温');
+INSERT INTO `phrase` VALUES (13, '永远要像你不需要金钱那样地工作，永远要像你不曾被伤害过那样地爱，永远要像没有人在注视你那样地跳舞，永远要像在天堂那样地生活。 ', '马克吐温');
+INSERT INTO `phrase` VALUES (14, '良好的教养在于隐藏我们对自己较佳的评价，以及隐藏我们对他人较差的评价。', '马克吐温');
+INSERT INTO `phrase` VALUES (15, '惟沉默是最高的轻蔑。', '鲁迅');
+INSERT INTO `phrase` VALUES (16, '人生有两个悲剧，第一是想得到的得不到，第二是想得到的得到了。', '王尔德');
+INSERT INTO `phrase` VALUES (17, '一个人总是可以善待他毫不在意的人。', '王尔德');
+INSERT INTO `phrase` VALUES (18, '生活并不复杂，复杂的是我们人自己。生活是单纯的，单纯的才是正确的。', '王尔德');
+INSERT INTO `phrase` VALUES (19, '爱，始于自我欺骗，终于欺骗他人。这就是所谓的浪漫。 ', '王尔德');
+INSERT INTO `phrase` VALUES (20, '世上只有一种英雄主义，就是在认清生活真相之后依然热爱生活。', '罗曼罗兰');
+INSERT INTO `phrase` VALUES (21, '大部分人在二三十岁上就死去了，因为过了这个年龄，他们只是自己的影子，此后的余生则是在模仿自己中度过，日复一日，更机械，更装腔作势地重复他们在有生之年的所作所为，所思所想，所爱所恨。', '罗曼罗兰');
+INSERT INTO `phrase` VALUES (22, '一个人的性格决定他的际遇。如果你喜欢保持你的性格，那么，你就无权拒绝你的际遇。', '罗曼罗兰');
+INSERT INTO `phrase` VALUES (23, '真正的光明决不是永没有黑暗的时间，只是永不被黑暗所掩蔽罢了。真正的英雄决不是永没有卑下的情操，只是永不被卑下的情操所屈服罢了。', '罗曼罗兰');
+INSERT INTO `phrase` VALUES (24, '任何努力决不落空，或许许多年都会了无音讯；却突然有一天你会发现你的思想已经有了影响。', '罗曼罗兰');
+INSERT INTO `phrase` VALUES (25, '我愿意深深地扎入生活，吮尽生活的骨髓，过得扎实，简单，把一切不属于生活的内容剔除得干净利落，把生活逼到绝处，用最基本的形式，简单，简单，再简单。', '梭罗');
+INSERT INTO `phrase` VALUES (26, '时间决定你会在生命中遇见谁，你的心决定你想要谁出现在你的生命里，而你的行为决定最后谁能留下。', '梭罗');
+INSERT INTO `phrase` VALUES (27, '生命并没有价值，除非你选择并赋予它价值。没有哪个地方有幸福，除非你为自己带来幸福。', '梭罗');
+INSERT INTO `phrase` VALUES (28, '知道自己知道什么，也知道自己不知道什么，这就是真正的知识。', '梭罗');
+INSERT INTO `phrase` VALUES (29, '在生活里，我们命中碰到的一切美好的东西，都是以秒计算的。', '高尔基');
+INSERT INTO `phrase` VALUES (30, '志在顶峰的人，决不会因留恋半山腰的奇花异草而停止攀登的步伐。', '高尔基');
+INSERT INTO `phrase` VALUES (31, '世界上最快而又最慢，最长而又最短，最平凡而又最珍贵，最容易忽视而又最令人后悔的就是时间。', '高尔基');
+INSERT INTO `phrase` VALUES (32, '华丽的装饰，精美的食品，填补不了精神的空虚；一个真正的革命者，首先追求的是思想上的充实和丰富。这一点，是任何珍贵的东西都不能代替的。', '高尔基');
+INSERT INTO `phrase` VALUES (33, '未曾哭过长夜的人，不足以语人生。', '歌德');
+INSERT INTO `phrase` VALUES (34, '谁若游戏人生，他就一事无成；谁不能主宰自己，便永远是一个奴隶。', '歌德');
+INSERT INTO `phrase` VALUES (35, '凡是让人幸福的东西，往往又会成为他不幸的源泉。', '歌德');
+INSERT INTO `phrase` VALUES (36, '阳光越是强烈的地方，阴影就越是深邃。', '歌德');
+INSERT INTO `phrase` VALUES (37, '今天做不成的，明天也不会做好。一天也不能虚度，要下决心把可能的事情，一把抓住而紧紧抱住，有决心就不会任其逃去，而且必然要贯彻实行。', '歌德');
+INSERT INTO `phrase` VALUES (38, '教育就是当一个人把在学校所学全部忘光之后剩下的东西。 ', '爱因斯坦');
+INSERT INTO `phrase` VALUES (39, '不要努力成为一个成功者，要努力成为一个有价值的人。', '爱因斯坦');
+INSERT INTO `phrase` VALUES (40, '如果一个想法在一开始不是荒谬的，那它就是没有希望的。', '爱因斯坦');
+INSERT INTO `phrase` VALUES (41, '慷慨不是你把我比你更需要的东西给我，而是你把你比我更需要的东西也给了我。', '纪伯伦');
+INSERT INTO `phrase` VALUES (42, '战争不决定谁对了，只决定谁留下了。', '罗素');
+INSERT INTO `phrase` VALUES (43, '乞丐并不会妒忌百万富翁，但是他肯定会妒忌收入更高的乞丐。', '罗素');
+INSERT INTO `phrase` VALUES (44, '我绝不会为我的信仰而献身，因为我可能是错的。', '罗素');
+INSERT INTO `phrase` VALUES (45, '上帝给了人们有限的力量但却给了人们无限的欲望。', '大仲马');
+INSERT INTO `phrase` VALUES (46, '别把世界看得像您心里想像的那么美丽，别把社会看得像您的贞操那么纯洁。', '大仲马');
+INSERT INTO `phrase` VALUES (47, '凡是一个深陷在爱情里的人，是决不肯让他的钟表安安稳稳地向前走的。', '大仲马');
+INSERT INTO `phrase` VALUES (48, '不要因为走得太远，忘了我们为什么出发。', '纪伯伦');
+INSERT INTO `phrase` VALUES (49, '一个人有两个我,一个在黑暗中醒着,一个在光明中睡着。', '纪伯伦');
+INSERT INTO `phrase` VALUES (50, '悲剧将人生的有价值的东西毁灭给人看，喜剧将那无价值的撕破给人看。', '鲁迅');
 
 -- ----------------------------
 -- Table structure for rich_text
@@ -65,7 +142,7 @@ CREATE TABLE `rich_text`  (
 -- ----------------------------
 -- Records of rich_text
 -- ----------------------------
-INSERT INTO `rich_text` VALUES (1, 15, '<p>hello <strong>worId </strong>and<strong> </strong>cxwii</p>');
+INSERT INTO `rich_text` VALUES (1, 15, '<h1>hello worId <strong>and cxwii</strong></h1>');
 
 -- ----------------------------
 -- Table structure for router_code
@@ -80,7 +157,7 @@ CREATE TABLE `router_code`  (
 -- ----------------------------
 -- Records of router_code
 -- ----------------------------
-INSERT INTO `router_code` VALUES (15, '[{\"code\": \"001\", \"children\": [{\"code\": \"001001\"}]}, {\"code\": \"002\", \"children\": [{\"code\": \"002001\"}, {\"code\": \"002002\"}, {\"code\": \"002003\"}]}, {\"code\": \"003\", \"children\": [{\"code\": \"003001\"}, {\"code\": \"003002\"}]}, {\"code\": \"004\", \"children\": [{\"code\": \"004001\"}, {\"code\": \"004002\"}]}, {\"code\": \"005\", \"children\": [{\"code\": \"005001\"}, {\"code\": \"005002\"}, {\"code\": \"005003\"}]}]');
+INSERT INTO `router_code` VALUES (15, '[{\"code\": \"001\", \"children\": [{\"code\": \"001001\"}]}, {\"code\": \"002\", \"children\": [{\"code\": \"002001\"}, {\"code\": \"002002\"}, {\"code\": \"002003\"}]}, {\"code\": \"003\", \"children\": [{\"code\": \"003001\"}, {\"code\": \"003002\"}]}, {\"code\": \"004\", \"children\": [{\"code\": \"004001\"}, {\"code\": \"004002\"}]}, {\"code\": \"005\", \"children\": [{\"code\": \"005001\"}, {\"code\": \"005002\"}, {\"code\": \"005003\"}]}, {\"code\": \"006\", \"children\": [{\"code\": \"006001\"}, {\"code\": \"006002\"}]}]');
 
 -- ----------------------------
 -- Table structure for router_rd
