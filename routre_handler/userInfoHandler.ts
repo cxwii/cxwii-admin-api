@@ -1,6 +1,40 @@
 const myDB = require('../db/mysql')
 const bcryptjs = require('bcryptjs')
 
+// 用于缓存phid
+let cachePhid
+
+const getPhid = () => {
+  let foo = Math.floor(Math.random() * 50) + 1
+
+  if (!cachePhid) {
+    cachePhid = foo
+    return foo
+  } if (cachePhid == foo) {
+    return getPhid()
+  } else {
+    cachePhid = foo
+    return foo
+  }
+}
+
+// 获取名人名言
+exports.getPhrase = (req, res) => {
+  let phid = getPhid()
+  myDB.query(
+    'select phrase, author from phrase where phid=?',
+    phid,
+    (err, results) => {
+      if(err) return res.cc(err)
+      res.send({
+        status: 200,
+        message: '获取名人名言成功',
+        data: results[0]
+      })
+    }
+  )
+}
+
 // 获取用户信息
 exports.getUserInfo = (req, res) => {
   myDB.query(
